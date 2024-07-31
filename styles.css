@@ -1,0 +1,166 @@
+body {
+    font-family: Arial, sans-serif;
+    /* background-color: #f0f0f0; */
+
+    background-image: url('https://img.freepik.com/premium-photo/stopwatch-human-hand-isolated-background_488220-26671.jpg');
+    background-size: cover; /* Cover the entire container */
+    background-position: center; /* Center the background image */
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    transition: background-color 0.3s ease;
+}
+
+.stopwatch {
+    background-color: #fff;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    padding: 20px;
+    text-align: center;
+    width: 300px;
+
+   
+    color: white;
+    transition: background-color 0.1s ease;
+    position: relative; /* Added for animations */
+    overflow: hidden; /* Added for animations */
+}
+
+.controls {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: center;
+    gap: 10px; /* Added for spacing between buttons */
+    flex-wrap: wrap; /* Added for wrapping buttons */
+}
+
+button {
+    background-color: #ff8c00; /* Orange background */
+    border: none;
+    color: white;
+    cursor: pointer;
+    font-size: 16px;
+    padding: 12px 24px; /* Increased padding for better touch targets */
+    text-align: center;
+    text-decoration: none;
+    border-radius: 4px;
+    transition: background-color 0.3s ease, transform 0.1s ease; /* Added for animations */
+}
+
+button:hover {
+    background-color: #e67e00; /* Darker orange on hover */
+}
+
+button:active {
+    transform: scale(0.95); /* Add slight scale effect on click */
+}
+
+.display {
+    font-size: 24px;
+    margin-bottom: 20px;
+    color: #333;
+}
+
+#laps {
+    list-style-type: none;
+    padding: 0;
+    text-align: left;
+    
+}
+
+#laps li {
+    margin-bottom: 5px;
+   
+}
+
+.dark-mode {
+    background-color: #333;
+    color: #f7f5f5;
+    transition: background-color 0.3s ease, color 0.3s ease;
+}
+.dark-mode .display {
+    color: white;
+}
+
+@keyframes slideIn {
+    0% {
+        transform: translateX(-100%);
+    }
+    100% {
+        transform: translateX(0);
+    }
+}
+
+@keyframes fadeIn {
+    0% {
+        opacity: 0;
+    }
+    100% {
+        opacity: 1;
+    }
+}
+
+/* Animation classes */
+.slide-in {
+    animation: slideIn 0.5s forwards;
+}
+
+.fade-in {
+    animation: fadeIn 0.5s forwards;
+}
+
+/* Animated heading styles */
+.animated-heading {
+    font-size: 28px;
+    font-weight: bold;
+    color: #ff8c00; /* Orange color for heading */
+    position: relative;
+    display: inline-block;
+    animation: dance 1s ease infinite alternate; /* Added dance animation */
+}
+
+ @keyframes dance {
+    0% {
+        transform: translateX(0);
+    }
+    100% {
+        transform: translateY(-5px) rotate(5deg); /* Adjust translation and rotation for dancing effect */
+        transform: translateX(-5px) rotate(5deg); /* Adjust translation and rotation for dancing effect */
+    } 
+} 
+
+@media (max-width: 768px) {
+    body {
+        background-image: url('https://i.pinimg.com/736x/70/df/ee/70dfee927f6ba7c13ae9b19286ef56a0.jpg'); /* Replace with your mobile background image URL */
+        background-size: cover;
+        background-position: center;
+        display: flex;
+        justify-content: center;
+        align-items: center;
+        height: 100vh;
+        margin: 0;
+        transition: background-color 0.3s ease;
+    }
+    .stopwatch {
+        background-color: #fff;
+        border-radius: 8px;
+        box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+        padding: 20px;
+        text-align: center;
+        width: 300px;
+    
+       
+        color: white;
+        transition: background-color 0.1s ease;
+        position:relative; /* Added for animations */
+        bottom: -190px;
+        overflow: hidden; /* Added for animations */
+    }
+    .dark-mode {
+        background-color: #333;
+        color: #f7f5f5;
+        transition: background-color 0.3s ease, color 0.3s ease;
+    }
+}
